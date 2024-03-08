@@ -3,11 +3,13 @@ name = "ollama_service"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lints.rust]
+unsafe_code = "forbid"
+unused = "allow" # For exploratory dev.
 
 [dependencies]
 derive_more = { version = "0.99.17", features = ["from"] }
 futures = "0.3.30"
-ollama-rs = "0.1.7"
+ollama-rs = { version = "0.1.7", features = ["stream"]}
 simple-fs = { version = "0.1.2", features = ["full"] }
 tokio = { version = "1.36.0", features = ["full"] }
